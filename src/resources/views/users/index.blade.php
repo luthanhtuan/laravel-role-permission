@@ -7,14 +7,17 @@
                     <p>{{ \Session::get('success') }}</p>
                 </div>
             @endif
-            <div class="card">
-                <div class="card-header">Users
-                    <span class="float-right">
-                        <a class="btn btn-primary" href="{{ route('users.create') }}">New User</a>
-                    </span>
+            <div class="card border-primary">
+                <div class="card-header border-primary">
+                    <span class="h2 text-primary">Users</span>
+                    @can('role-create')
+                        <span class="float-right">
+                            <a class="btn btn-primary" href="{{ route('users.create') }}">New User</a>
+                        </span>
+                    @endcan
                 </div>
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead class="thead-dark">
                             <tr>
                                 <th>#</th>
@@ -33,7 +36,7 @@
                                     <td>
                                         @if (!empty($user->getRoleNames()))
                                             @foreach ($user->getRoleNames() as $val)
-                                                <label class="badge badge-dark">{{ $val }}</label>
+                                                <label class="badge badge-warning">{{ $val }}</label>
                                             @endforeach
                                         @endif
                                     </td>

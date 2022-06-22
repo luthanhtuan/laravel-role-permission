@@ -12,8 +12,9 @@
                     </ul>
                 </div>
             @endif
-            <div class="card">
-                <div class="card-header">Create post
+            <div class="card border-primary">
+                <div class="card-header border-primary">
+                    <span class="h2 text-primary">Create post</span>
                     <span class="float-right">
                         <a class="btn btn-primary" href="{{ route('posts.index') }}">Posts</a>
                     </span>

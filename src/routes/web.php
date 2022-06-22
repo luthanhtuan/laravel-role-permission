@@ -33,7 +33,3 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('permissions', 'PermissionController');
     Route::resource('posts', 'PostController');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

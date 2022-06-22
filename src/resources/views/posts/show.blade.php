@@ -7,8 +7,9 @@
                     <p>{{ \Session::get('success') }}</p>
                 </div>
             @endif
-            <div class="card">
-                <div class="card-header">Post
+            <div class="card border-primary">
+                <div class="card-header border-primary">
+                    <span class="h2 text-primary">Post</span>
                     @can('role-create')
                         <span class="float-right">
                             <a class="btn btn-primary" href="{{ route('posts.index') }}">Back</a>
@@ -17,13 +18,10 @@
                 </div>
                 <div class="card-body">
                     <div class="lead">
-                        <strong>Title:</strong>
-                        {{ $post->title }}
+                        <strong class="h3 font-weight-bold">{{ $post->title }}</strong>
                     </div>
-                    <div class="lead">
-                        <strong>Body:</strong>
-                        {{ $post->body }}
-                    </div>
+                    {{ $post->body }}
+                    </>
                 </div>
             </div>
         </div>

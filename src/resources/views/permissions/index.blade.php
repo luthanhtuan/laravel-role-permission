@@ -7,8 +7,9 @@
                 <p>{{ \Session::get('success') }}</p>
             </div>
         @endif
-        <div class="card">
-            <div class="card-header">Permissions
+        <div class="card border-primary">
+            <div class="card-header border-primary">
+                <span class="h2 text-primary">Permissions</span>
                 @can('role-create')
                     <span class="float-right">
                         <a class="btn btn-primary" href="{{ route('permissions.create') }}">New Permission</a>
@@ -16,7 +17,7 @@
                 @endcan
             </div>
             <div class="card-body">
-                <table class="table table-hover">
+                <table class="table table-hover table-bordered">
                     <thead class="thead-dark">
                         <tr>
                             <th>#</th>

@@ -12,8 +12,9 @@
                     </ul>
                 </div>
             @endif
-            <div class="card">
-                <div class="card-header">Create role
+            <div class="card border-primary">
+                <div class="card-header border-primary">
+                    <span class="h2 text-primary">Create role</span>
                     <span class="float-right">
                         <a class="btn btn-primary" href="{{ route('roles.index') }}">Roles</a>
                     </span>
@@ -27,11 +28,14 @@
                     <div class="form-group">
                         <strong>Permission:</strong>
                         <br />
-                        @foreach ($permission as $value)
-                            <label>{{ Form::checkbox('permission[]', $value->id, false, ['class' => 'name']) }}
-                                {{ $value->name }}</label>
-                            <br />
-                        @endforeach
+                        <div class="row">
+                            @foreach ($permission as $value)
+                                <div class="col-3">
+                                    <label>{{ Form::checkbox('permission[]', $value->id, false, ['class' => 'name']) }}
+                                        {{ $value->name }}</label>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                     {!! Form::close() !!}
