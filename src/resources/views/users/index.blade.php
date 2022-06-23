@@ -10,7 +10,7 @@
             <div class="card border-primary">
                 <div class="card-header border-primary">
                     <span class="h2 text-primary">Users</span>
-                    @can('role-create')
+                    @can('user-create')
                         <span class="float-right">
                             <a class="btn btn-primary" href="{{ route('users.create') }}">New User</a>
                         </span>
@@ -41,7 +41,9 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a class="btn btn-success" href="{{ route('users.show', $user->id) }}">Show</a>
+                                        @can('user-list')
+                                            <a class="btn btn-success" href="{{ route('users.show', $user->id) }}">Show</a>
+                                        @endcan
                                         @can('user-edit')
                                             <a class="btn btn-primary" href="{{ route('users.edit', $user->id) }}">Edit</a>
                                         @endcan
